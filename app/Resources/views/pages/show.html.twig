@@ -1,0 +1,7 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <h1>Hellow {{ show }}</h1>
+    <p>{{ a|raw }}</p>
+    <a href="{{ path('pages_test', {'page': show}) }}">Test</a>
+    <img src="{{ asset('image/2.jpg') }}">
+{% endblock %}

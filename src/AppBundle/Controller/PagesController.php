@@ -1,14 +1,9 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Толик
- * Date: 27.09.2017
- * Time: 16:34
- */
 
 namespace AppBundle\Controller;
 
 
+use AppBundle\Entity\Pages;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
@@ -17,6 +12,19 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 
 class PagesController extends Controller
 {
+    /**
+     * @Route("/pages/new")
+     */
+    public function newAction()
+    {
+        $pages = new Pages();
+        $pages->setName('some digit: '.rand(1, 100));
+        $em = $this->getDoctrine()->getManager();
+        $em->persist($pages);
+        $em->flush();
+        return new Response('<html><body>Запись добавлена!</body></html>');
+    }
+
     /**
      * @Route("/pages/{page}")
      */

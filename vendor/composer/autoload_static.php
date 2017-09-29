@@ -56,6 +56,10 @@ class ComposerStaticInit536f82e6fd30baebdc554abc134e9082
             'Psr\\Container\\' => 14,
             'Psr\\Cache\\' => 10,
         ),
+        'N' => 
+        array (
+            'Nelmio\\Alice\\' => 13,
+        ),
         'M' => 
         array (
             'Monolog\\' => 8,
@@ -71,6 +75,7 @@ class ComposerStaticInit536f82e6fd30baebdc554abc134e9082
         'F' => 
         array (
             'Fig\\Link\\' => 9,
+            'Faker\\' => 6,
         ),
         'D' => 
         array (
@@ -79,6 +84,7 @@ class ComposerStaticInit536f82e6fd30baebdc554abc134e9082
             'Doctrine\\Common\\Cache\\' => 22,
             'Doctrine\\Common\\' => 16,
             'Doctrine\\Bundle\\MigrationsBundle\\' => 33,
+            'Doctrine\\Bundle\\FixturesBundle\\' => 31,
             'Doctrine\\Bundle\\DoctrineCacheBundle\\' => 36,
             'Doctrine\\Bundle\\DoctrineBundle\\' => 31,
         ),
@@ -193,6 +199,10 @@ class ComposerStaticInit536f82e6fd30baebdc554abc134e9082
         array (
             0 => __DIR__ . '/..' . '/psr/cache/src',
         ),
+        'Nelmio\\Alice\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/nelmio/alice/src/Nelmio/Alice',
+        ),
         'Monolog\\' => 
         array (
             0 => __DIR__ . '/..' . '/monolog/monolog/src/Monolog',
@@ -208,6 +218,10 @@ class ComposerStaticInit536f82e6fd30baebdc554abc134e9082
         'Fig\\Link\\' => 
         array (
             0 => __DIR__ . '/..' . '/fig/link-util/src',
+        ),
+        'Faker\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker',
         ),
         'Doctrine\\Instantiator\\' => 
         array (
@@ -228,6 +242,10 @@ class ComposerStaticInit536f82e6fd30baebdc554abc134e9082
         'Doctrine\\Bundle\\MigrationsBundle\\' => 
         array (
             0 => __DIR__ . '/..' . '/doctrine/doctrine-migrations-bundle',
+        ),
+        'Doctrine\\Bundle\\FixturesBundle\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/doctrine/doctrine-fixtures-bundle',
         ),
         'Doctrine\\Bundle\\DoctrineCacheBundle\\' => 
         array (
@@ -293,6 +311,10 @@ class ComposerStaticInit536f82e6fd30baebdc554abc134e9082
             'Doctrine\\Common\\Inflector\\' => 
             array (
                 0 => __DIR__ . '/..' . '/doctrine/inflector/lib',
+            ),
+            'Doctrine\\Common\\DataFixtures' => 
+            array (
+                0 => __DIR__ . '/..' . '/doctrine/data-fixtures/lib',
             ),
             'Doctrine\\Common\\Collections\\' => 
             array (

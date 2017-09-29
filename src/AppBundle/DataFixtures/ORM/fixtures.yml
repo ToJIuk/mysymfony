@@ -1,0 +1,5 @@
+AppBundle\Entity\Pages:
+    pages_{1..10}:
+        name: <name()>
+        someText: <text(20)>
+        old: <numberBetween(100, 100000)>

@@ -19,6 +19,7 @@ class PagesController extends Controller
     {
         $pages = new Pages();
         $pages->setName('some digit: '.rand(1, 100));
+        $pages->setOld(rand(100, 999));
         $em = $this->getDoctrine()->getManager();
         $em->persist($pages);
         $em->flush();
@@ -26,11 +27,27 @@ class PagesController extends Controller
     }
 
     /**
-     * @Route("/pages/{page}")
+     * @Route("/pages")
+     */
+    public function listAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+        $list = $em->getRepository('AppBundle:Pages')->findAll();
+
+        return $this->render('pages/list.html.twig', [
+            'pages' => $list
+        ]);
+    }
+    /**
+     * @Route("/pages/{page}", name="page_show")
      */
     public function showAction($page)
     {
-        $a = 'some *text* one';
+        $em = $this->getDoctrine()->getManager();
+        $pag = $em->getRepository('AppBundle:Pages')
+            ->findOneBy(['name' => $page]);
+
+        /*$a = 'some *text* one';
         $cache = $this->get('doctrine_cache.providers.my_markdown_cache');
         $key = md5($a);
         if ($cache->contains($key)) {
@@ -40,10 +57,10 @@ class PagesController extends Controller
             $a = $this->get('markdown.parser')
                 ->transform($a);
             $cache->save($key, $a);
-        }
+        }*/
         return $this->render('pages/show.html.twig', [
             'show' => $page,
-            'a' => $a
+            'pages' => $pag
         ]);
     }
 
@@ -61,6 +78,5 @@ class PagesController extends Controller
             'notes' => $notes,
         ];
         return new JsonResponse($data);
-
     }
 }

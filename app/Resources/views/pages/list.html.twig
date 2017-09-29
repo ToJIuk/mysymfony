@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <table>
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>old</th>
+            <th>Last updated</th>
+        </tr>
+        </thead>
+        {% for page in pages %}
+            <tr>
+                <td>
+                    <a href="{{ path('page_show', {'page': page.name}) }}">
+                        {{ page.name }}--</a></td>
+                <td>{{ page.old }}</td>
+                <td>{{ page.updatedAt|date('Y-m-d') }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

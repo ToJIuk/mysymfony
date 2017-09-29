@@ -1,7 +1,10 @@
 {% extends 'base.html.twig' %}
+
+{% block title %}Pages {{ pages.name }}{% endblock %}
+
 {% block body %}
-    <h1>Hellow {{ show }}</h1>
-    <p>{{ a|raw }}</p>
+    <h1>Hellow {{ pages.name }}</h1>
+    <p>{{ pages.old|raw }}</p>
     <a href="{{ path('pages_test', {'page': show}) }}">Test</a>
     <img src="{{ asset('image/2.jpg') }}">
 {% endblock %}

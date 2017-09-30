@@ -4,6 +4,7 @@ namespace AppBundle\Controller;
 
 
 use AppBundle\Entity\Pages;
+use AppBundle\Service\TolikService;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
@@ -47,6 +48,8 @@ class PagesController extends Controller
         $pag = $em->getRepository('AppBundle:Pages')
             ->findOneBy(['name' => $page]);
 
+        $myservice = new TolikService($this->get('markdown.parser'));
+        $text = $myservice->myserv($pag->getName());
         /*$a = 'some *text* one';
         $cache = $this->get('doctrine_cache.providers.my_markdown_cache');
         $key = md5($a);
@@ -60,6 +63,7 @@ class PagesController extends Controller
         }*/
         return $this->render('pages/show.html.twig', [
             'show' => $page,
+            'text' => $text,
             'pages' => $pag
         ]);
     }

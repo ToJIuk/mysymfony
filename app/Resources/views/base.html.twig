@@ -4,7 +4,8 @@
         <meta charset="UTF-8" />
         <title>{% block title %}Tolik{% endblock %}</title>
         {% block stylesheets %}
-        <link type="text/css" rel="stylesheet" href="{{ asset('css/style.css') }}">
+            <link rel="stylesheet" href="{{ asset('https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css') }}">
+            <link type="text/css" rel="stylesheet" href="{{ asset('css/style.css') }}">
         {% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
 

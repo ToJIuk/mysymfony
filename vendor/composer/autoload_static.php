@@ -325,6 +325,13 @@ class ComposerStaticInit536f82e6fd30baebdc554abc134e9082
                 0 => __DIR__ . '/..' . '/doctrine/annotations/lib',
             ),
         ),
+        'B' => 
+        array (
+            'Braincrafted\\Bundle\\BootstrapBundle' => 
+            array (
+                0 => __DIR__ . '/..' . '/braincrafted/bootstrap-bundle',
+            ),
+        ),
     );
 
     public static $classMap = array (

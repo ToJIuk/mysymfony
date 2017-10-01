@@ -13,12 +13,19 @@ class TolikForm extends AbstractType
         $builder
             ->add('name')
             ->add('old')
-            ->add('someText');
+            ->add('someText')
+            ->add('date', null, array(
+                'placeholder' => array(
+                    'year' => 'Год', 'month' => 'Месяц', 'day' => 'День'
+                )
+            ));
     }
 
     public function configureOptions(OptionsResolver $resolver)
     {
-
+        $resolver->setDefaults([
+            'data_class' => 'AppBundle\Entity\Pages'
+        ]);
     }
 
     public function getBlockPrefix()

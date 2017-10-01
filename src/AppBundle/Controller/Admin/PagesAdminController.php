@@ -8,7 +8,7 @@
 
 namespace AppBundle\Controller\Admin;
 
-
+use Symfony\Component\HttpFoundation\Request;
 use AppBundle\Form\TolikForm;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -33,9 +33,20 @@ class PagesAdminController extends Controller
     /**
      * @Route("/pages/new", name = "admin_pages_new")
      */
-    public function newAction()
+    public function newAction(Request $request)
     {
         $form = $this->createForm(TolikForm::class);
+
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid())
+        {
+            $pages = $form->getData();
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($pages);
+            $em->flush();
+            $this->addFlash('success', 'Page created!');
+            return $this->redirectToRoute('admin_pages');
+        }
         return $this->render('admin/pages/new.html.twig', [
             'pagesForm' => $form->createView()
         ]);

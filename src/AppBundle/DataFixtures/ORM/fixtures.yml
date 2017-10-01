@@ -3,3 +3,4 @@ AppBundle\Entity\Pages:
         name: <name()>
         someText: <text(20)>
         old: <numberBetween(100, 100000)>
+        date: <dateTimeBetween('-200 years', 'now')>

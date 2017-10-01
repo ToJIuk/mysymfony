@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <table style="width: 100%">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>old</th>
+        </tr>
+        </thead>
+        {% for page in pages %}
+            <tr>
+                <td>
+                    <a href="{{ path('page_show', {'page': page.name}) }}">
+                        {{ page.name }}</a></td>
+                <td>{{ page.old }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

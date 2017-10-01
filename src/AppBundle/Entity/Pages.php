@@ -33,6 +33,27 @@ class Pages
      */
     private $old;
 
+    /**
+     * @ORM\Column(type="date")
+     */
+    private $date;
+
+    /**
+     * @return mixed
+     */
+    public function getDate()
+    {
+        return $this->date;
+    }
+
+    /**
+     * @param mixed $date
+     */
+    public function setDate($date)
+    {
+        $this->date = $date;
+    }
+
     public function getName()
     {
         return $this->name;

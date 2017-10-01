@@ -4,7 +4,6 @@
 
 {% block body %}
     <h1>Hellow {{ text }}</h1>
-    <p>{{ pages.old|raw }}</p>
-    <a href="{{ path('pages_test', {'page': show}) }}">Test</a>
-    <img src="{{ asset('image/2.jpg') }}">
+    <a href="{{ path('admin_pages_new') }}"><b>ADD</b></a><br>
+    <p><img src="{{ asset('image/2.jpg') }}"></p>
 {% endblock %}

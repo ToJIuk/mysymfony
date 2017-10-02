@@ -6,3 +6,13 @@ homepage:
     path: /
     defaults:
         _controller: AppBundle:Main:homepage
+
+testpage:
+    path: /test
+    defaults:
+        _controller: AppBundle:Main:testpage
+
+form:
+    path: /testform
+    defaults:
+        _controller: AppBundle:Pages:mytestform

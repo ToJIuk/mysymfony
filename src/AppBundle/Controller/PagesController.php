@@ -83,4 +83,13 @@ class PagesController extends Controller
         ];
         return new JsonResponse($data);
     }
+
+    public function mytestformAction()
+    {
+        $form = $this->createForm('AppBundle\Form\TestForm');
+
+        return $this->render('main/mytestform.html.twig', [
+            'myform' => $form->createView()
+        ]);
+    }
 }
